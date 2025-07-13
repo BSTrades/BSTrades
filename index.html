@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS Trades</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Open Sans -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <style>
+        /* CSS for Trading Website */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        header {
+            background-color: #1a3c34;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header h1 {
+            margin: 0 0.5em;
+            font-size: 2em;
+        }
+        nav {
+            background-color: #2e5c54;
+            padding: 1em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 2em;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+        .section {
+            background-color: white;
+            padding: 2em;
+            margin-bottom: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        /* Home Section Styling */
+        #home p {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.8; /* Increased line spacing */
+            font-size: 1.1em; /* Slightly larger for readability */
+        }
+        /* Horizontal Services Section */
+        .services {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            gap: 1.5em;
+            padding: 1em 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .service-item {
+            flex: 0 0 250px;
+            text-align: center;
+            padding: 1.5em;
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            scroll-snap-align: start;
+        }
+        .service-item:hover {
+            background-color: #d0e6f0;
+        }
+        .service-image {
+            width: 100%;
+            height: 150px;
+            background-color: #2e5c54;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            border-radius: 5px;
+            margin-bottom: 1em;
+        }
+        .service-item h3 {
+            margin: 0.5em 0;
+            font-size: 1.2em;
+        }
+        .service-item p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        /* TradingView Chart */
+        .tradingview-chart {
+            height: 500px;
+        }
+        /* Contact Form */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact input, .contact textarea {
+            padding: 0.8em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .contact button {
+            background-color: #1a3c34;
+            color: white;
+            padding: 0.8em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .contact button:hover {
+            background-color: #2e5c54;
+        }
+        .contact a {
+            color: #2e5c54;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            color: #ffd700;
+        }
+        footer {
+            background-color: #1a3c34;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            width: 100%;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 0.5em 0;
+            }
+            .container {
+                margin: 1em;
+            }
+            .tradingview-chart {
+                height: 400px;
+            }
+            .services {
+                padding: 1em;
+            }
+            .service-item {
+                flex: 0 0 200px;
+            }
+            header {
+                flex-direction: column;
+                padding: 1.5em;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            header img {
+                max-height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BS Trades</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Our Services</a>
+        <a href="#chart">Live Chart</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <div class="section" id="home">
+            <h2>Welcome to BS Trades</h2>
+            <p>Your trusted partner in the stock market. We specialize in delivering reliable trading solutions backed by research, strategy, and years of market experience. Whether you're a beginner or a seasoned investor, our mission is to help you grow your portfolio with confidence and consistency.
+At BS Trades, we believe in smart decision-making, transparent practices, and continuous learning. Our dedicated team keeps a close eye on market trends, price action, and technical indicators to help you stay ahead of the curve.
+Join us in navigating the markets with a clear vision and disciplined approach because at BS Trades, YOUR GROWTH IS OUR PRIORITY.</p>
+        </div>
+
+        <!-- Our Services Section (Horizontal View) -->
+        <div class="section services-section" id="services">
+            <h2>Our Services</h2>
+            <p>DISCOVER OUR EXPERT-LED SERVICES TO ELEVATE YOUR TRADING AND FINANCIAL PLANNING</p>
+            <div class="services">
+                <div class="service-item">
+                    <div class="service-image"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Suggestions</h3>
+                    <p>Get expert suggestions on NSE and Crypto markets.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-image"><i class="fas fa-chart-line"></i></div>
+                    <h3>Chart Analysis</h3>
+                    <p>Receive daily expert market analysis and detailed trading setups.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-image"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>1-on-1 Mentorship</h3>
+                    <p>Learn trading from scratch through live sessions and personal support.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-image"><i class="fas fa-piggy-bank"></i></div>
+                    <h3>Financial Planning</h3>
+                    <p>Set goals and improve your finances by analyzing and evaluating your data for a better financial roadmap.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-image"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3>Investment Planning</h3>
+                    <p>Our experts provide tailored investment plans to help you grow your wealth smartly.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TradingView Chart Section -->
+        <div class="section tradingview-chart" id="chart">
+            <h2>Live Stock Chart</h2>
+            <p>Track real-time stock performance with our interactive chart.</p>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div id="tradingview_chart"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                    new TradingView.widget({
+                        "width": "100%",
+                        "height": "85%",
+                        "symbol": "BSE:RELIANCE",
+                        "interval": "D",
+                        "timezone": "Asia/Kolkata",
+                        "theme": "light",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_chart"
+                    });
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+
+        <!-- Contact Section (Formspree with Phone Number) -->
+        <div class="section contact" id="contact">
+            <h2>Contact Us</h2>
+            <p>Need support? Reach out to us!</p>
+            <form action="https://formspree.io/f/manjrbnn" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number">
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <input type="text" name="_gotcha" style="display:none">
+                <button type="submit">Send Message</button>
+            </form>
+            <p style="font-size: 0.9em; color: #555;">Your data is protected as per our <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>BS Trades. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        // Client-side form validation
+        document.querySelector("form").addEventListener("submit", function(event) {
+            const name = document.querySelector("input[name='name']").value;
+            const email = document.querySelector("input[name='email']").value;
+            const phone = document.querySelector("input[name='phone']").value;
+            const message = document.querySelector("textarea[name='message']").value;
+            if (!name || !email || !message) {
+                event.preventDefault();
+                alert("Please fill out all required fields (Name, Email, Message).");
+            } else if (phone && !/^\+?\d{10,15}$/.test(phone)) {
+                event.preventDefault();
+                alert("Please enter a valid phone number (10-15 digits, optional + prefix).");
+            } else {
+                alert("Thank you for your submission!");
+            }
+        });
+    </script>
+</body>
+</html>
